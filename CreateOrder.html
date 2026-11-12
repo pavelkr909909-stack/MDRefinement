@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Client Order Form</title>
+  <style>
+    body { font-family: sans-serif; max-width: 400px; margin: 40px auto; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    select, button { width: 100%; padding: 8px; margin-top: 5px; }
+  </style>
+</head>
+<body>
+
+  <h2>Create Order</h2>
+
+  <form id="orderForm">
+    <!-- Step 1: Choose Client -->
+    <label for="clientSelect">Client</label>
+    <select id="clientSelect" name="clientId" required>
+      <option value="">-- Loading clients... --</option>
+    </select>
+
+    <!-- Step 2: Choose Goods (Locked until client is selected) -->
+    <label for="goodsSelect">Available Goods</label>
+    <select id="goodsSelect" name="goodId" disabled required>
+      <option value="">-- Select a client first --</option>
+    </select>
+
+    <button type="submit" id="submitBtn" disabled style="margin-top: 20px;">
+      Place Order
+    </button>
+  </form>
+
+  <script>
+    const clientSelect = document.getElementById('clientSelect');
+    const goodsSelect = document.getElementById('goodsSelect');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // 1. Load clients from backend on page load
+    async function loadClients() {
+      const response = await fetch('/api/clients');
+      const clients = await response.json();
+
+      clientSelect.innerHTML = '<option value="">-- Choose a client --</option>';
+      clients.forEach(client => {
+        const option = document.createElement('option');
+        option.value = client.ClientId;
+        option.textContent = client.ClientName;
+        clientSelect.appendChild(option);
+      });
+    }
+
+    // 2. When client changes, fetch their allowed goods and unlock the field
+    clientSelect.addEventListener('change', async () => {
+      const clientId = clientSelect.value;
+
+      // Reset and lock if no client is selected
+      if (!clientId) {
+        goodsSelect.innerHTML = '<option value="">-- Select a client first --</option>';
+        goodsSelect.disabled = true;
+        submitBtn.disabled = true;
+        return;
+      }
+
+      goodsSelect.innerHTML = '<option value="">-- Loading goods... --</option>';
+      goodsSelect.disabled = true;
+
+      // Fetch goods allowed for this specific client
+      const response = await fetch(`/api/clients/${clientId}/goods`);
+      const goods = await response.json();
+
+      goodsSelect.innerHTML = '<option value="">-- Choose a product --</option>';
+      goods.forEach(good => {
+        const option = document.createElement('option');
+        option.value = good.GoodId;
+        option.textContent = `${good.GoodName} ($${good.Price})`;
+        goodsSelect.appendChild(option);
+      });
+
+      // Unlock the goods dropdown and submit button
+      goodsSelect.disabled = false;
+      submitBtn.disabled = false;
+    });
+
+    loadClients();
+  </script>
+
+</body>
+</html>
