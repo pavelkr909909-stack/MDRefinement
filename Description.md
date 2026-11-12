@@ -1,11 +1,11 @@
 # Client Order Management System
 
 ## 1. System Overview & Data Architecture
-
-* **Clients Table:** Stores the list of all clients with additional info like email, loyality level.
-* **Articles Table:** Stores the catalog of available products/items.
-* **Prices Table:** Stores current pricing mapped to specific articles.
-* **Orders Table:** Records submitted client orders, referencing the selected articles and their respective prices at the time of purchase.
+**Tables: :** 
+* **Clients :** Stores the list of all clients with additional info like email, loyality level.
+* **Articles:** Stores the catalog of available products/items.
+* **Prices :** Stores current pricing mapped to specific articles.
+* **Orders :** Records submitted client orders, referencing the selected articles and their respective prices at the time of purchase.
 
 ---
 
