@@ -1,11 +1,11 @@
 # Client Order Management System
 
 ## 1. System Overview & Data Architecture
-
-* **Clients Table:** Stores the list of all clients with additional info like email, loyality level.
-* **Articles Table:** Stores the catalog of available products/items.
-* **Prices Table:** Stores current pricing mapped to specific articles.
-* **Orders Table:** Records submitted client orders, referencing the selected articles and their respective prices at the time of purchase.
+**Tables: :** 
+* **Clients :** Stores the list of all clients with additional info like email, loyality level.
+* **Articles:** Stores the catalog of available products/items.
+* **Prices :** Stores current pricing mapped to specific articles.
+* **Orders :** Records submitted client orders, referencing the selected articles and their respective prices at the time of purchase.
 
 ---
 
@@ -24,8 +24,12 @@
   * A new record is inserted into the **Orders** table containing the client details, selected article, quantity, and retrieved price.
 
 ---
+## 3. Defect  Backlog   (TBD)
 
-## 3. Product Backlog / Future Enhancements (TBD)
+| ID | Defect | Description  | Priority |
+| :--- | :--- | :--- | :--- |
+| **DF-01** | **Product not chosen - system hangs** | The submit button is not blocked if no article is chosen by customer, so customer can submit order with "no produt". System hangs | High |
+## 4. Product Backlog   (TBD)
 
 The following features are scoped for upcoming iterations to improve user experience, security, and administrative efficiency:
 
@@ -37,3 +41,6 @@ The following features are scoped for upcoming iterations to improve user experi
 | **BL-04** | **Line-Item Subtotals** | *(Dependent on BL-01 & BL-02)* Calculate and display line-item subtotals (`unit_price × quantity`) for each selected article, alongside the overall order total. | Medium |
 | **BL-05** | **Client Authentication** | Implement username and password authentication to replace the open client dropdown, preventing unauthorized or fraudulent ("false flag") orders. | High |
 | **BL-06** | **Admin Client Management UI** | Build a dedicated HTML administration form allowing admins to register and onboard new clients without requiring direct SQL database access. | Low |
+| **BL-07** | **Add EDIFAC electronic invoice for order** | Build a dedicated HTML administration form allowing admins to register and onboard new clients without requiring direct SQL database access. | Low |
+| **BL-07** | **Add EDIFAC electronic invoice for order** | Build a dedicated HTML administration form allowing admins to register and onboard new clients without requiring direct SQL database access. | Low |
+
