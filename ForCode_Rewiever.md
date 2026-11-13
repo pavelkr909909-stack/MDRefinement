@@ -1,4 +1,4 @@
-# Small attention exercize for code rewiever
+# Small attention exercise for code rewiever
 
 **In one of the files there is deliberatly made error.**
   
