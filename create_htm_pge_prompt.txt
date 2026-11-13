@@ -1,0 +1,2 @@
+creat simple html page that will have combox with clients choise from database select client.name from clients 
+once client is selected select art 
