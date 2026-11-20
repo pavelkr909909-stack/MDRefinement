@@ -42,5 +42,5 @@ The following features are scoped for upcoming iterations to improve user experi
 | **BL-05** | **Client Authentication** | Implement username and password authentication to replace the open client dropdown, preventing unauthorized or fraudulent ("false flag") orders. | High |
 | **BL-06** | **Admin Client Management UI** | Build a dedicated HTML administration form allowing admins to register and onboard new clients without requiring direct SQL database access. | Low |
 | **BL-07** | **Add EDIFAC electronic invoice for order** | Build a dedicated HTML administration form allowing admins to register and onboard new clients without requiring direct SQL database access. | Low |
-| **BL-07** | **Add EDIFAC electronic invoice for order** | Build a dedicated HTML administration form allowing admins to register and onboard new clients without requiring direct SQL database access. | Low |
+| **BL-07** | **Add EDIFACT electronic invoice for order** | Build a dedicated HTML administration form allowing admins to register and onboard new clients without requiring direct SQL database access. | Low |
 
