@@ -40,6 +40,5 @@ The following features are scoped for upcoming iterations to improve user experi
 | **BL-03** | **Order Total Calculation** | Display a real-time grand total for the entire order prior to submission. | Medium |
 | **BL-04** | **Line-Item Subtotals** | *(Dependent on BL-01 & BL-02)* Calculate and display line-item subtotals (`unit_price × quantity`) for each selected article, alongside the overall order total. | Medium |
 | **BL-05** | **Client Authentication** | Implement username and password authentication to replace the open client dropdown, preventing unauthorized or fraudulent ("false flag") orders. | High |
-| **BL-06** | **Admin Client Management UI** | Build a dedicated HTML administration form allowing admins to register and onboard new clients without requiring direct SQL database access. | Low |
-| **BL-07** | **Add EDIFAC electronic invoice for order** | Build a dedicated HTML administration form allowing admins to register and onboard new clients without requiring direct SQL database access. | Low |
-| **BL-07** | **Add EDIFAC electronic invoice for order** | Build a dedicated HTML administration form allowing admins to register and onboard new clients without requiring direct SQL database access. | Low |
+| **BL-06** | **Admin Client Management UI** | Build a dedicated HTML administration form allowing admins to register and onboard new clients without requiring direct SQL database access. | Low | 
+| **BL-07** | **Add EDIFAC electronic invoice for order** | Add a button that will generate EDIFACT invoice for the order | Low |
